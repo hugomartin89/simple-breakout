@@ -1,0 +1,8 @@
+# Game
+/dist/
+
+# Node.js / Yarn
+/node_modules/
+yarn.lock
+npm-debug.log
+yarn-debug.log
