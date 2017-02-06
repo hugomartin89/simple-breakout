@@ -1,0 +1,9 @@
+{
+  "name": "simple-breakout",
+  "version": "0.0.0",
+  "description": "Simple Breakout Game",
+  "license": "GPL-3.0",
+  "author": "Hugo Martín <hugomartin89@gmail.com>",
+  "repository": "https://gitlab.com/hugomartin89/simple-breakout",
+  "private": true
+}
