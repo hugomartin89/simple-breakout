@@ -1,19 +1,6 @@
-class Ball extends ex.Actor {
-    private texture: ex.Texture;
+import Actor from "../core/Actor";
 
-    public constructor(texture: ex.Texture, x: number = 0, y: number = 0) {
-        super(x, y, texture.width, texture.height);
-
-        this.texture = texture;
-        this.collisionType = ex.CollisionType.Elastic;
-    }
-
-    public onInitialize(engine: ex.Engine): void {
-        super.onInitialize(engine);
-
-        this.addDrawing(this.texture);
-    }
-
+class Ball extends Actor {
     public update(engine: ex.Engine, delta: number): void {
         super.update(engine, delta);
 

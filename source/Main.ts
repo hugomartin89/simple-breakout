@@ -49,9 +49,9 @@ function loadResources(): void {
 
 function generateBoard(): void {
     const padding: number = 15; // separación entre ladrillos
-    const xoffset: number = 75; // x-offset
+    const xoffset: number = 45; // x-offset
     const yoffset: number = 40; // y-offset
-    const columns: number = 16;
+    const columns: number = 9;
     const rows: number = 5;
 
     let brick: Brick;
@@ -65,7 +65,7 @@ function generateBoard(): void {
             posx = xoffset + i * (texture.width + padding) + padding;
             posy = yoffset + j * (texture.height + padding) + padding;
 
-            brick = new Brick(texture, posx, posy);
+            brick = new Brick(texture, posx, posy, ex.CollisionType.Active);
             brick.on("collision", function(event: ex.CollisionEvent): void {
                 event.actor.kill();
 
@@ -117,15 +117,18 @@ function configureEvents(): void {
 }
 
 function initialize(): void {
-    ball = new Ball(ballTexture, engine.getWidth() / 2, engine.getHeight() - 84);
+    ball = new Ball(ballTexture, engine.getWidth() / 2, engine.getHeight() - 84, ex.CollisionType.Elastic);
     bricks = new Array<Brick>();
-    paddle = new Paddle(paddleTexture, engine.getWidth() / 2, engine.getHeight() - 60);
+    paddle = new Paddle(paddleTexture, engine.getWidth() / 2, engine.getHeight() - 60, ex.CollisionType.Fixed);
 
     generateBoard();
 }
 
 function main(): void {
-    engine = new ex.Engine();
+    engine = new ex.Engine({
+        width: 800,
+        height: 600
+    });
 
     loadResources();
 
