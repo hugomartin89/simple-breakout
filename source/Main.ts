@@ -49,7 +49,7 @@ function loadResources(): void {
 
 function generateBoard(): void {
     const padding: number = 15; // separación entre ladrillos
-    const xoffset: number = 45; // x-offset
+    const xoffset: number = 65; // x-offset
     const yoffset: number = 40; // y-offset
     const columns: number = 9;
     const rows: number = 5;
