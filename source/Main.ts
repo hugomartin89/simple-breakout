@@ -150,5 +150,8 @@ function main(): void {
 
 document.body.style.margin = "0px";
 document.body.style.padding = "0px";
+document.body.style.overflow = "hidden";
+
+window.oncontextmenu = () => false;
 
 window.onload = main;
